@@ -2,6 +2,7 @@ package hello.servlet.domain.member;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -10,13 +11,16 @@ public class MemberController {
 
     @GetMapping("/new-form")
     public String newForm() {
-        System.out.println("newForm controller is run");
         return "new-form";
     }
 
-    @GetMapping("/test")
+    @PostMapping("/save")
     public String test() {
-        System.out.println("test controller is run");
-        return "test";
+        return "save";
+    }
+
+    @GetMapping("")
+    public String members() {
+        return "members";
     }
 }
