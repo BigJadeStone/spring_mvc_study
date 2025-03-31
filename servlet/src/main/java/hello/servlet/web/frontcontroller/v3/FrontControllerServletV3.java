@@ -47,11 +47,11 @@ public class FrontControllerServletV3 extends HttpServlet {
     }
 
     //view의 논리 이름을 받아서 실제 위치해 있는 물리 이름으로 변환
-    private static MyView viewResolver(String viewName) {
+    private MyView viewResolver(String viewName) {
         return new MyView("/WEB-INF/views/" + viewName + ".jsp");
     }
 
-    private static Map<String, String> createParamMap(HttpServletRequest request) {
+    private Map<String, String> createParamMap(HttpServletRequest request) {
         Map<String, String> paramMap = new HashMap<>();
         request.getParameterNames().asIterator()
                 .forEachRemaining(paramName -> paramMap.put(paramName, request.getParameter(paramName)));
